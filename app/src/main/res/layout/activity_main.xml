@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -8,82 +8,75 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30dp"
-        android:text="@string/login"
-        android:layout_gravity="center"
-        android:layout_marginTop="70dp"
-        android:layout_marginBottom="20dp"
-        android:textColor="@color/blue"
-             />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="@string/welcome"
-        android:textSize="30dp" />
-
-
-
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/email"
-        android:layout_marginTop="30dp"
-        android:background="@drawable/custom_border"
-        android:layout_marginHorizontal="10dp"
-        android:padding="10dp"
-        />
+        android:orientation="vertical">
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/password"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/custom_border"
-        android:layout_marginHorizontal="10dp"
-        android:padding="10dp"
-        />
+        <TextView
+            style="@style/text_30"
+            android:text="@string/login"
+            android:layout_marginTop="@dimen/_70sdp"
+            android:layout_marginBottom="@dimen/_20sdp"
+            android:layout_gravity="center"
+            android:textColor="@color/blue"
+            />
 
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/forget_password"
-        android:textColor="@color/blue"
-        android:textSize="16dp"
-        android:layout_marginTop="10dp"
-        android:gravity="end"
-        android:layout_marginRight="15dp"
-        />
-
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/create_account"
-        android:textSize="16dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        />
-
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/login_button"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"
-        android:gravity="center"
-        android:layout_marginHorizontal="10dp"
-        android:background="@drawable/custom_button"
-        app:backgroundTint="@null"
-        />
+        <TextView
+            style="@style/text_30"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:text="@string/welcome"
+            />
 
 
 
-</LinearLayout>
+        <EditText
+            style="@style/edittext"
+            android:hint="@string/email"
+            android:layout_marginTop="@dimen/_30sdp"
+            />
+
+        <EditText
+            style="@style/edittext"
+            android:hint="@string/password"
+            android:layout_marginTop="@dimen/_10sdp"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="@string/forget_password"
+            android:textColor="@color/blue"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:gravity="end"
+            android:layout_marginRight="@dimen/_15sdp"
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16dp"
+            android:text="@string/create_account"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center"
+            />
+
+
+        <Button
+            style="@style/button_20"
+            android:text="@string/login_button"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:gravity="center"
+            app:backgroundTint="@null"
+            android:layout_marginBottom="@dimen/_30sdp"
+            />
+
+
+    </LinearLayout>
+
+
+
+</ScrollView>
