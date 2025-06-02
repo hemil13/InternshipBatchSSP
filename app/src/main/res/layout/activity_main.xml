@@ -32,18 +32,27 @@
 
 
         <EditText
+            android:id="@+id/main_email"
             style="@style/edittext"
             android:hint="@string/email"
             android:layout_marginTop="@dimen/_30sdp"
+            android:inputType="textEmailAddress"
+            android:drawableLeft="@drawable/ic_camera"
+            android:drawablePadding="@dimen/_5sdp"
             />
 
         <EditText
+            android:id="@+id/main_password"
             style="@style/edittext"
             android:hint="@string/password"
+            android:inputType="textPassword"
             android:layout_marginTop="@dimen/_10sdp"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="@dimen/_5sdp"
             />
 
         <TextView
+            android:id="@+id/main_forget_password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16dp"
@@ -56,6 +65,7 @@
 
 
         <TextView
+            android:id="@+id/main_create_account"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="16dp"
@@ -66,6 +76,7 @@
 
 
         <Button
+            android:id="@+id/main_login_button"
             style="@style/button_20"
             android:text="@string/login_button"
             android:layout_marginTop="@dimen/_20sdp"
