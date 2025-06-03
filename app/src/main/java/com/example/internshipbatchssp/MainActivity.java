@@ -65,5 +65,14 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+        create_account.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SignupActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

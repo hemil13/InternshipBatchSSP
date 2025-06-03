@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".SignupActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -15,34 +15,57 @@
 
         <TextView
             style="@style/text_30"
-            android:text="@string/login"
+            android:text="Create Account"
             android:layout_marginTop="@dimen/_70sdp"
             android:layout_marginBottom="@dimen/_20sdp"
             android:layout_gravity="center"
+            android:textSize="@dimen/_25sdp"
             android:textColor="@color/blue"
             />
 
         <TextView
             style="@style/text_30"
+            android:textSize="@dimen/_18sdp"
             android:gravity="center"
             android:layout_gravity="center"
-            android:text="@string/welcome"
+            android:text="Create an account so you can explore all existing jobs"
             />
 
 
-
         <EditText
-            android:id="@+id/main_email"
+            android:id="@+id/singup_name"
+            style="@style/edittext"
+            android:hint="Name"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:drawableLeft="@drawable/ic_camera"
+            android:drawablePadding="@dimen/_5sdp"
+            />
+        
+        
+        <EditText
+            android:id="@+id/singup_email"
             style="@style/edittext"
             android:hint="@string/email"
-            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginTop="@dimen/_8sdp"
             android:inputType="textEmailAddress"
             android:drawableLeft="@drawable/ic_camera"
             android:drawablePadding="@dimen/_5sdp"
             />
 
+
         <EditText
-            android:id="@+id/main_password"
+            android:id="@+id/singup_contact"
+            style="@style/edittext"
+            android:hint="Contact"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:inputType="phone"
+            android:drawableLeft="@drawable/ic_camera"
+            android:drawablePadding="@dimen/_5sdp"
+            android:maxLength="10"
+            />
+
+        <EditText
+            android:id="@+id/singup_password"
             style="@style/edittext"
             android:hint="@string/password"
             android:inputType="textPassword"
@@ -51,30 +74,31 @@
             android:drawablePadding="@dimen/_5sdp"
             />
 
-        <TextView
-            android:id="@+id/main_forget_password"
-            style="@style/text_16"
-            android:text="@string/forget_password"
-            android:textColor="@color/blue"
+
+        <EditText
+            android:id="@+id/singup_confirm_password"
+            style="@style/edittext"
+            android:hint="Confirm Password"
+            android:inputType="textPassword"
             android:layout_marginTop="@dimen/_10sdp"
-            android:gravity="end"
-            android:layout_marginRight="@dimen/_15sdp"
+            android:drawableLeft="@drawable/ic_lock"
+            android:drawablePadding="@dimen/_5sdp"
             />
 
 
         <TextView
-            android:id="@+id/main_create_account"
+            android:id="@+id/singup_create_account"
             style="@style/text_16"
-            android:text="@string/create_account"
+            android:text="Already Have an Account"
             android:layout_marginTop="@dimen/_20sdp"
             android:gravity="center"
             />
 
 
         <Button
-            android:id="@+id/main_login_button"
+            android:id="@+id/singup_button"
             style="@style/button_20"
-            android:text="@string/login_button"
+            android:text="Signup"
             android:layout_marginTop="@dimen/_20sdp"
             android:gravity="center"
             app:backgroundTint="@null"
