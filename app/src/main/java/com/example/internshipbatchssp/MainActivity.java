@@ -1,6 +1,7 @@
 package com.example.internshipbatchssp;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -38,11 +39,15 @@ public class MainActivity extends AppCompatActivity {
 
     SQLiteDatabase db;
 
+    SharedPreferences sp;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        sp  = getSharedPreferences(ConstantSp.pref, MODE_PRIVATE);
 
         db = openOrCreateDatabase("InternshipBatchSSP.db", MODE_PRIVATE, null);
         String userTable = "CREATE TABLE IF NOT EXISTS user(userid INTEGER PRIMARY KEY AUTOINCREMENT, name VARCHAR(50), email VARCHAR(100), contact VARCHAR(15), password VARCHAR(20))";
@@ -73,6 +78,14 @@ public class MainActivity extends AppCompatActivity {
                     String checkUser = "SELECT * FROM user WHERE (email = '"+email.getText().toString()+"' OR contact = '"+email.getText().toString()+"' ) AND password = '"+password.getText().toString()+"'";
                     Cursor cursor = db.rawQuery(checkUser, null);
                     if(cursor.getCount()>0){
+
+                        while(cursor.moveToNext()){
+                            sp.edit().putString(ConstantSp.userid, cursor.getString(0)).commit();
+                            sp.edit().putString(ConstantSp.name, cursor.getString(1)).commit();
+                            sp.edit().putString(ConstantSp.contact, cursor.getString(3)).commit();
+                            sp.edit().putString(ConstantSp.email, cursor.getString(2)).commit();
+                            sp.edit().putString(ConstantSp.password, cursor.getString(4)).commit();
+                        }
                         Toast.makeText(MainActivity.this, "Login Sucessful", Toast.LENGTH_LONG).show();
                         Intent intent = new Intent(MainActivity.this, DashboardActivity.class);
                         startActivity(intent);
