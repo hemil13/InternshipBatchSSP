@@ -71,8 +71,9 @@ public class SignupActivity extends AppCompatActivity {
                     confirm_password.setError("Confirm Password Does Not Matches");
                 }
                 else{
-                    String insertQuery = "INSERT INTO user VALUES(NULL, '"+name.getText().toString()+"', '"+email.getText().toString()+"','"+contact.getText().toString()+"', '"+password.getText().toString()+"')";
+                    String insertQuery = "INSERT INTO user VALUES (NULL, '"+name.getText().toString()+"', '"+email.getText().toString()+"', '"+contact.getText().toString()+"', '"+password.getText().toString()+"')";
                     db.execSQL(insertQuery);
+
                     Toast.makeText(SignupActivity.this, "Signup Sucessful", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(SignupActivity.this, MainActivity.class);
                     startActivity(intent);

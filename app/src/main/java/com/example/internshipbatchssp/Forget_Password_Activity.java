@@ -51,6 +51,9 @@ public class Forget_Password_Activity extends AppCompatActivity {
                 }
 
                 else{
+
+
+
                     Toast.makeText(Forget_Password_Activity.this, "Password Changed sucessfully", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(Forget_Password_Activity.this, MainActivity.class);
                     startActivity(intent);
