@@ -32,7 +32,6 @@ public class Forget_Password_Activity extends AppCompatActivity {
         String tableQuery = "CREATE TABLE IF NOT EXISTS user(userid INTEGER PRIMARY KEY AUTOINCREMENT ,name VARCHAR(50), email VARCHAR(100), contact VARCHAR(15), password VARCHAR(20))";
         db.execSQL(tableQuery);
 
-
         email = findViewById(R.id.forget_email);
         password = findViewById(R.id.forget_password);
         confirm_password = findViewById(R.id.forget_confirm_password);
@@ -59,7 +58,6 @@ public class Forget_Password_Activity extends AppCompatActivity {
                 } else if (!confirm_password.getText().toString().matches(password.getText().toString())) {
                     confirm_password.setError("Confirm Password Does Not Matches");
                 }
-
                 else{
                     String checkEmail = "SELECT * FROM user WHERE email = '"+email.getText().toString()+"'";
                     Cursor cursor = db.rawQuery(checkEmail,null);
@@ -73,7 +71,6 @@ public class Forget_Password_Activity extends AppCompatActivity {
                         Toast.makeText(Forget_Password_Activity.this,"Email Doesn't Exists", Toast.LENGTH_LONG).show();
                     }
                 }
-
             }
         });
 

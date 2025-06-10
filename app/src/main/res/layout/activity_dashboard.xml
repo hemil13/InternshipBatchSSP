@@ -29,4 +29,15 @@
         app:backgroundTint="@null"
         android:text="Logout"/>
 
+
+    <Button
+        android:id="@+id/dashboard_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginHorizontal="@dimen/_20sdp"
+        android:background="@drawable/custom_button"
+        app:backgroundTint="@null"
+        android:text="Category"/>
+
 </LinearLayout>
